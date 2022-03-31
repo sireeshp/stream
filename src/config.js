@@ -13,10 +13,11 @@ module.exports = {
         },
         http: {
             port: 8888,
+            mediaroot: './media',
             allow_origin: '*'
         },
         trans: {
-            ffmpeg: '/usr/local/bin/ffmpeg',
+            ffmpeg: '/usr/bin/ffmpeg',
             tasks: [
                 {
                     app: 'live',

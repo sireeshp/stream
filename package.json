@@ -3,15 +3,25 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./app.js"
+    "start": "node ./app.js",
+    "dev": "node ./src/app.js",
+    "build": "rm -rf dist && mkdir dist && cp -r  src/* dist && cp -r public/* dist && cp package.json dist && npm run scp",
+    "scp": "scp -r ./dist/* root@77.68.83.25:/var/www/vhosts/wholelot.business/stream.wholelot.business"
   },
   "dependencies": {
+    "@wholelot/storage-db": "^1.0.73",
     "axios": "^0.21.1",
+    "compression": "^1.7.4",
     "cookie-parser": "~1.4.4",
+    "cors": "^2.8.5",
     "cron": "^1.8.2",
+    "crypto-js": "^4.1.1",
     "debug": "~2.6.9",
     "express": "~4.16.1",
+    "helmet": "^5.0.2",
+    "jsonwebtoken": "^8.5.1",
     "morgan": "~1.9.1",
-    "node-media-server": "^2.3.8"
+    "node-media-server": "^2.3.8",
+    "rate-limiter-flexible": "^2.3.6"
   }
 }
